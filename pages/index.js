@@ -3,25 +3,46 @@ import React, { useState } from "react";
 import styles from "../styles/index.module.css";
 
 function Index() {
-    // var bookss=[]
-    
-    // const [books, setbooks] = useState([]);
-    
-    const [selectVal, setselectVal] = useState("");
-  console.log(books);
-  const [book1, setbook1] = useState({})
-  const [book2, setbook2] = useState({})
-  const [book3, setbook3] = useState({})
+  const [selectVal, setselectVal] = useState("");
+  
+  const [book1, setbook1] = useState({});
+  const [book2, setbook2] = useState({});
+  const [book3, setbook3] = useState({});
+  
+  const [boPi, setboPi] = useState(1)
+  const [boQi, setboQi] = useState(1)
+  
+  const [btPi, setbtPi] = useState(1)
+  const [btQi, setbtQi] = useState(1)
 
-  console.log(selectVal);
-  function handleClick(){
-    if(selectVal===Book1){
-      set
+  const [bthPi, setbthPi] = useState(1)
+  const [bthQi, setbthQi] = useState(1)
+
+  
+  // console.log(book1,book2,book3)
+// console.log(selectVal)
+  function handleClick() {
+    if (selectVal === "Book1") {
+      setbook1({
+        name: "Book1",
+        price: 1,
+        qty: 1,
+      });
     }
-    
-    
-    
-
+    if (selectVal === "Book2") {
+      setbook2({
+        name: "Book2",
+        price: 1,
+        qty: 1,
+      });
+    }
+    if (selectVal === "Book3") {
+      setbook3({
+        name: "Book3",
+        price: 1,
+        qty: 1,
+      });
+    }
   }
   return (
     <div>
@@ -36,32 +57,65 @@ function Index() {
           <option value="Book3">Book 3</option>
         </select>
 
-        <button>Add Book</button>
+        <button onClick={handleClick}>Add Book</button>
+        </div>
         <div className={styles.tableheader}>
           <h5>Name</h5>
           <h5>Price</h5> <h5>Qty</h5> <h5>Total</h5>
         </div>
+        <div className={styles.list}>
+          
+          
+        {book1.name && (
+          <>
+          <div>
+            
+          <h1>{book1.name}</h1>
+          <input type="number" value={book1.price} 
+          ></input>
+           <input type="number" value={book1.qty} 
+          ></input>
+          
+          </div>
+          </>
+        )}
+        {book2.name && (
+          <>
+          <div>
+            
+          <h1>{book2.name}</h1>
+          <input type="number" value={book2.price} 
+          onchange={(e)=> setbtPi(e.target.value)}
+          ></input>
+           <input type="number" value={book2.qty} 
+           onchange={(e)=>setbtQi(e.target.value)}
+          ></input>
+          <h5>Total:{btQi*btPi}</h5>
+          </div>
+          </>
+        )}
+        {book3.name && (
+          
+          <>
+          <div>
+            
+          <h1>{book3.name}</h1>
+          <input type="number" value={book3.price} 
+           onchange={(e)=> setbthPi(e.target.value)}
+          ></input>
+           <input type="number" value={book3.qty} 
+            onchange={(e)=> setbthQi(e.target.value)}
+          ></input>
+           <h5>Total:{bthQi*bthPi}</h5>
+          </div>
+          </>
+        )}
+        </div>
         <div className={styles.totalValue}>
-          {/* {books.map((it) => {
-            return (
-              <>
-                <div className={styles.list}>
-                  <h1>{it.name}</h1>
-                  <input type="number" value={it.price} />
-
-                  {/* <h1>{it.qty}</h1>       */}
-                  {/* <h1>{it.price}</h1>
-                </div>
-              </> */}
-            {/* ); */}
-          {/* })} */} */
-          {/* } */}
-
           <h5>Grand Total</h5>
-          <h5>Value</h5>
+          <h5>{bthQi*bthPi + btQi*btPi}</h5>
         </div>
       </div>
-    </div>
   );
 }
 

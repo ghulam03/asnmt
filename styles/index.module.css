@@ -9,6 +9,7 @@
     background-color: rgba(0, 0, 255, 0.261);
 }
 .tableheader{
+    margin-left: 600px;
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -16,10 +17,13 @@
 .totalValue{
     display: flex;
     flex-direction: row;
+    margin-left: 600px;
 
     gap: 10px;
 }
-.list{
+.list div {
+    margin-left: 400px;
     display: flex;
     flex-direction: row;
+    gap: 30px;
 }
