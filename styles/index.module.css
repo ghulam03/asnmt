@@ -1,0 +1,25 @@
+
+.header{
+    text-align: center;
+}
+.search{
+    margin-left: 600px;
+}
+.search button{
+    background-color: rgba(0, 0, 255, 0.261);
+}
+.tableheader{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.totalValue{
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+}
