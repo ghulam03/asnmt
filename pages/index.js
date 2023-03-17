@@ -67,12 +67,17 @@ function Index() {
           <>
             <div>
               <h1>{book1.name}</h1>
-              <input type="number" value={book1.price}
-              onchange={(e) => setboPi(e.target.value)}
+              <input
+                type="number"
+                value={book1.price}
+                onchange={(e) => setboPi(e.target.value)}
               ></input>
-              <input type="number" value={book1.qty}
-              onchange={(e) => setboQi(e.target.value)}
+              <input
+                type="number"
+                value={book1.qty}
+                onchange={(e) => setboQi(e.target.value)}
               ></input>
+                   <h5>Total:{boQi * boPi}</h5>
             </div>
           </>
         )}
@@ -115,7 +120,7 @@ function Index() {
       </div>
       <div className={styles.totalValue}>
         <h5>Grand Total</h5>
-        <h5>{bthQi * bthPi + btQi * btPi  + boPi*boQi}</h5>
+        <h5>{bthQi * bthPi + btQi * btPi + boPi * boQi}</h5>
       </div>
     </div>
   );
